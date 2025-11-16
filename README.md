@@ -1,172 +1,87 @@
-End-to-End Machine Learning Project (Flask Deployment)
+# ML_Project – Flask Application (Render Deployment)
 
-This is a complete End-to-End ML Project with training pipeline, prediction pipeline, modular code structure, and a deployed Flask web application for real-time predictions.
+This project is a Flask web application deployed on Render using GitHub integration. The repository name is **ML_Project**, and it contains a working Flask backend that can run both locally and in cloud hosting.
 
-The project follows a production-ready architecture including:
+## Live Demo
+Render live URL: https://student-exam-performance-indicator-9e0t.onrender.com
 
-Modular ML pipeline
+## Local Development (Run on Your PC)
+Follow these steps to run this Flask app locally:
 
-Training pipeline
+1. Clone the repository:
+   git clone https://github.com/Pallab1995/ML_Project.git
+   cd ML_Project
 
-Prediction pipeline
+2. Install dependencies:
+   pip install -r requirements.txt
 
-Flask web app
+3. Run the Flask app:
+   python app.py
 
-Setup file for packaging
+4. Open the app in your browser:
+   http://127.0.0.1:5000/
 
-Requirements dependency management
+## Tech Stack
+Python 3.10  
+Flask  
+Gunicorn  
+Render Cloud Hosting  
+GitHub CI Deployments  
 
-🚀 Project Features
+## Project Structure
+ML_Project/
+app.py (main Flask application)
+requirements.txt
+runtime.txt
+README.md
+templates/ (optional)
 
-Complete ML workflow: Data → Training → Model → Prediction
+## Deployment Instructions (Render)
+1. Push your code to GitHub:
+   git add .
+   git commit -m "initial commit"
+   git push
 
-Modular and readable project structure
+2. Create a file named runtime.txt:
+   python-3.10.12
 
-Flask web interface for taking user inputs
+3. Ensure your requirements.txt includes:
+   flask
+   gunicorn
 
-Real-time prediction using saved model
+4. Go to Render → New → Web Service → Select GitHub → Choose ML_Project repo.
 
-Setup script for installation
+5. Use this Build Command (single line):
+   pip install --upgrade pip ; pip install --no-cache-dir -r requirements.txt
 
-Deployable on Render, AWS EC2, or Azure
+6. Start Command:
+   gunicorn app:app
+   (If your file name is different, adjust accordingly: gunicorn main:app etc.)
 
-📂 Project Structure
-ML_Project
-│
-├── app.py
-├── application.py
-├── setup.py
-├── Requirements.txt
-├── README.md
-│
-├── src
-│   ├── pipelines
-│   │   ├── predict_pipeline.py
-│   │   └── other_pipeline_files.py
-│   ├── components
-│   ├── utils
-│   └── ...
-│
-├── templates
-│   ├── index.html
-│   └── home.html
-│
-├── models
-│   └── model.pkl
-│
-└── artifacts
-    ├── preprocessor.pkl
-    └── model.pkl
+7. Deploy:
+   Click “Clear build cache & deploy”.
 
-🧠 How the Application Works
-1. User fills form on home.html
+## Environment Variables
+If your app requires variables, add them inside:
+Render → Settings → Environment Variables
 
-Your Flask app receives:
+## Troubleshooting
+If you see:
+“gunicorn: command not found”
+→ Add gunicorn to requirements.txt
 
-gender
+If deployment fails:
+→ Ensure Python version is set using runtime.txt
 
-race_ethnicity
+If app does not open on PC:
+→ Make sure you visit:
+   http://127.0.0.1:5000/
 
-parental_level_of_education
+Check errors in:
+Render → Logs → Live Tail
 
-lunch
+## Conclusion
+This repository (ML_Project) contains a fully working Flask application that runs locally on http://127.0.0.1:5000/ and is deployed on Render with proper production settings(URL https://student-exam-performance-indicator-9e0t.onrender.com).
 
-test_preparation_course
-
-reading_score
-
-writing_score
-
-2. CustomData converts form data → DataFrame
-
-Located in:
-src/pipelines/predict_pipeline.py
-
-
-app
-
-3. PredictPipeline loads model and predicts
-results = Predict_Pipeline.predict(pred_df)
-
-4. Output is shown on home.html
-🛠 How to Run Project Locally
-1. Create virtual environment
-python -m venv venv
-venv\Scripts\activate   (Windows)
-source venv/bin/activate (Linux / Mac)
-
-2. Install dependencies
-pip install -r Requirements.txt
-
-
-Requirements
-
-3. Run the Flask app
-python app.py
-
-
-Your app will run on:
-
-http://127.0.0.1:5000/
-
-🌐 Deploying the Project
-Option 1: Deploy on Render (Recommended)
-1. Create a new repository on GitHub
-
-Push your full project.
-
-2. Go to Render → Web Services → New Web Service
-3. Choose your GitHub repo
-4. Fill settings:
-Runtime: Python 3.10+
-Build Command: pip install -r Requirements.txt
-Start Command: gunicorn app:app
-
-5. Deploy
-Option 2: Deploy on AWS EC2
-
-Launch EC2 (Ubuntu)
-
-Install Python, pip
-
-Clone your repo
-
-Install requirements
-
-Run with Gunicorn + Nginx
-
-📌 Important Notes
-
-For deployment, remove debug=True from Flask
-(Already done in application.py) 
-
-application
-
-Ensure your src/ folder has __init__.py in all subfolders
-
-Render requires gunicorn (install if needed)
-
-📦 Packaging With setup.py
-
-You included a clean packaging file:
-
-python setup.py install
-
-
-setup
-
-This makes your ML pipeline installable as a package.
-
-🙋‍♂️ Author
-
+## Author
 Pallab Sharma
-Data Analyst • Machine Learning Developer
-(pallabsharma100@gmail.com
-)
-
-If you want, I can also generate:
-
-✅ README for GitHub badges (stars, forks, Python version)
-✅ README banner image
-✅ A downloadable .txt version of this README
-Just tell me!
