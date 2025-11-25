@@ -85,3 +85,9 @@ This repository (ML_Project) contains a fully working Flask application that run
 
 ## Author
 Pallab Sharma
+
+Data Analyst → AI/ML Practitioner
+
+🔗 GitHub Profile(https://github.com/Pallab1995)
+
+📧 Email: pallabsharma100@gmail.com
