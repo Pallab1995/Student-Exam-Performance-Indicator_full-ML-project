@@ -28,10 +28,9 @@ Gunicorn
 Render Cloud Hosting  
 GitHub CI Deployments  
 
----
+## 📁 Project Structure
 
-## Project Structure
----
+```
 ML_Project/
 │
 ├── app.py                                   ← Main Flask application
@@ -41,7 +40,9 @@ ML_Project/
 │
 └── templates/                               ← HTML templates (optional)
     └── index.html                           ← Example template (optional)
----
+```
+
+
 
 ## Deployment Instructions (Render)
 1. Push your code to GitHub:
